@@ -1,0 +1,38 @@
+﻿@model EcommerceApp.DatabaseContext.ApplicationRole
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row m-t-30">
+    <div class="col-md-12">
+
+        <div class="panel panel-info">
+            <div class="panel-heading"> Create Role</div>
+            <div class="panel-wrapper" aria-expanded="true">
+                <div class="panel-body">
+                    <form asp-area="Admin" asp-controller="Users" asp-action="CreateRole" method="post">
+                        <div class="form-body">
+                            <h3 class="box-title">Create role</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Role Name</label>
+                                        <input asp-for="Name" type="text" class="form-control" id="rolename">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="form-actions m-t-30">
+                            <button type="submit" value="Create" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                        </div>
+                    </form>
+                    <div asp-validation-summary="All"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

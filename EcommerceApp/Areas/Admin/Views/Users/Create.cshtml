@@ -1,0 +1,58 @@
+﻿
+
+@model EcommerceApp.Services.ViewModels.AdminVM.CreateUserVM
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<section id="wrapper">
+    <div class="login-box">
+        <div class="white-box">
+            <form asp-area="Admin" asp-controller="Users" asp-action="Create" method="post" class="form-horizontal" id="loginform">
+                <h3 class="box-title">Add new user</h3>
+                <div class="form-group">
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" type="text" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Password" >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Category</label>
+                        <select   asp-for="RoleName" asp-items="@(new SelectList(Model.AppRoles,"Name"))" class="form-control" tabindex="1">
+                            <option>Please select one</option>
+                        </select>
+                    </div>
+                </div>
+              
+                
+                <div class="form-group text-center m-t-20">
+                    <div class="col-md-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase" type="submit">Register</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-30">
+                    <div class="col-md-12 text-center">
+                    </div>
+                </div>
+            </form>
+            <div class="bg-success" style="font-size:medium">@ViewData["add"]</div>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+    </div>
+</section>
